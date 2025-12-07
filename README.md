@@ -1,7 +1,7 @@
 ## Screenshots
 
-![preview-default](https://raw.githubusercontent.com/blankaex/startpage-v3/master/screenshots/screenshot-default.png)
-![preview-default](https://raw.githubusercontent.com/blankaex/startpage-v3/master/screenshots/screenshot-search.png)
+![preview-default](https://raw.githubusercontent.com/blankaex/startpage-v5/master/screenshots/screenshot-default.png)
+![preview-default](https://raw.githubusercontent.com/blankaex/startpage-v5/master/screenshots/screenshot-search.png)
 
 ## Usage
 
