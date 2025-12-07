@@ -10,27 +10,32 @@
 
   <body onload="javascript:onLoad();">
     <main>
-      <div id="search-wrapper">
-        <form id="search-form">
-          <div id="search-bar-wrapper">
-            <input id="search-bar" type="text" autocomplete="off" placeholder="search" 
-              onfocus="javascript:searchFocus();"
-              onblur="javascript:searchBlur();"
-            ;/>
-            <hr id="search-hr" />
+      <div id="main-container">
+        <div id="left-container">
+          <img src="img/EGWh-DFUUAA2KIz.jpg" />
+        </div>
+        <div id="right-container">
+          <div id="search-wrapper">
+            <form id="search-form">
+              <div id="search-bar-wrapper">
+                <input id="search-bar" type="text" autocomplete="off" placeholder="search" 
+                  onfocus="javascript:searchFocus();"
+                  onblur="javascript:searchBlur();"
+                ;/>
+                <hr id="search-hr" />
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-      <div id="search-options">
-        <h2 class="search-flags">search engine flags</h2>
-        <hr />
-        <ul id="search-flag-list"></ul>
-      </div>
-      <div id="links-container">
+          <div id="search-options">
+            <ul id="search-flag-list"></ul>
+          </div>
+          <div id="links-container">
+          </div>
+        </div>
       </div>
     </main>
 
-    <script src="js/main.js" onerror="this.onerror=null;this.src='js/main.js.template'"></script>
+    <script src="js/main.js.template"></script>
   </body>
 
 </html>
