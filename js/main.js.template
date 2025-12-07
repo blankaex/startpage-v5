@@ -1,50 +1,42 @@
-const weatherLocation = '品川区'
-
 const searchEngineDefault = 'https://www.google.com/search?q=';
 const searchEngines = [
     ["g", "google", "https://www.google.com/search?q="],
     ["i", "google images", "https://www.google.com/search?udm=2&q="],
     ["y", "youtube", "https://www.youtube.com/results?search_query="],
-    ["n", "nyaa", "https://nyaa.si/?f=0&c=0_0&q="],
-    ["s", "sukebei", "https://sukebei.nyaa.si/?f=0&c=0_0&q="],
-    ["a", "anilist", "https://anilist.co/search/anime?search="],
-    ["m", "anilist manga", "https://anilist.co/search/manga?search="],
-    ["r", "arch wiki", "https://wiki.archlinux.org/index.php?search="],
-    ["j", "jisho", "http://jisho.org/search/"],
-    ["k", "kotobank", "https://kotobank.jp/search?q="],
-    ["w", "wikipedia", "http://en.wikipedia.org/w/index.php?search="],
-    ["x", "searxng", "https://searxng.blankaex.reisen/search?q="]
+    ["w", "wikipedia", "http://en.wikipedia.org/w/index.php?search="]
 ];
 
 const links = [
-    ["CATEGORY", "social"],
-    ["twitter", "https://x.com/home"],
-    ["youtube", "https://www.youtube.com/feed/subscriptions"],
-    ["github", "https://github.com/blankaex?tab=repositories"],
-    ["gmail", "https://mail.google.com/"],
-    ["protonmail", "https://mail.proton.me/"],
+    ["CATEGORY", "category1"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
     ["CATEGORY", "END"],
 
-    ["CATEGORY", "media"],
-    ["anichart", "https://anichart.net/"],
-    ["anilist", "https://anilist.co/user/blankaex/animelist"],
-    ["mangalist", "https://anilist.co/user/blankaex/mangalist"],
-    ["vndb", "https://vndb.org/u42490/ulist?vnlist=1"],
-    ["dramalist", "https://mydramalist.com/profile/blankaex"],
+    ["CATEGORY", "category2"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
     ["CATEGORY", "END"],
 
-    ["CATEGORY", "server"],
-    ["qbittorrent", "https://qbittorrent.blankaex.reisen/"],
-    ["szurubooru", "https://szurubooru.blankaex.reisen/"],
-    ["statping", "https://statping.blankaex.reisen/"],
-    ["portracker", "https://portracker.blankaex.reisen/"],
+    ["CATEGORY", "category3"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
     ["CATEGORY", "END"],
 
-    ["CATEGORY", "misc"],
-    ["amazon", "https://www.amazon.co.jp/"],
-    ["gmaps", "https://maps.google.com/"],
-    ["nosh", "https://nosh.jp/mypage/475144/dashboard"],
-    ["smart-tt", "https://reserva.be/smartttgym/reserve?mode=service_staff&search_evt_no=63eJwzNDAzMzEAAAQuATI&ctg_no=aceJwzMjK3MAEAAxABCA&sctg_no=d9eJwzNTI2AAACBADL"],
+    ["CATEGORY", "category4"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
+    ["eample link", "https://example-link.com/"],
     ["CATEGORY", "END"]
 ]
 
