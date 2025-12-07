@@ -1,3 +1,8 @@
+## Screenshots
+
+![preview-default](https://raw.githubusercontent.com/blankaex/startpage-v3/master/screenshots/screenshot-default.png)
+![preview-default](https://raw.githubusercontent.com/blankaex/startpage-v3/master/screenshots/screenshot-search.png)
+
 ## Usage
 
-Rename `js/main.js.template` to `js/main.js` and customize links/search engines.
+Rename `js/main.js.template` to `js/main.js` and customize to your liking.
