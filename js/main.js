@@ -57,7 +57,7 @@ async function buildWeather () {
         const data = await res.json();
         let temp = `${data["current_weather"]["temperature"]}${data["current_weather_units"]["temperature"]}`;
         let cond = `${weatherCodes[data["current_weather"]["weathercode"]]}`;
-        weatherInfo.innerHTML = `${temp} ${cond}`;
+        weatherInfo.innerHTML = `${temp}<br/>${cond}`;
     } catch (e) {
         weatherInfo.innerHTML = "offline";
     }
