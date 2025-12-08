@@ -1,45 +1,3 @@
-const searchEngineDefault = 'https://www.google.com/search?q=';
-const searchEngines = [
-    ["g", "google", "https://www.google.com/search?q="],
-    ["i", "google images", "https://www.google.com/search?udm=2&q="],
-    ["y", "youtube", "https://www.youtube.com/results?search_query="],
-    ["w", "wikipedia", "http://en.wikipedia.org/w/index.php?search="]
-];
-
-const links = [
-    ["CATEGORY", "category1"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["CATEGORY", "END"],
-
-    ["CATEGORY", "category2"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["CATEGORY", "END"],
-
-    ["CATEGORY", "category3"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["CATEGORY", "END"],
-
-    ["CATEGORY", "category4"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["example link", "https://example-link.com/"],
-    ["CATEGORY", "END"]
-]
-
 const tabKeyCode = 9;
 const enterKeyCode = 13;
 const escapeKeyCode = 27;
@@ -50,16 +8,23 @@ const searchFlagList = document.getElementById('search-flag-list');
 const searchOptions = document.getElementById('search-options');
 const searchHr = document.getElementById('search-hr');
 const linksContainer = document.getElementById('links-container');
+const weatherPanel = document.getElementById('weather');
+const weatherInfo = document.getElementById('weather-info');
 
-function onLoad() {
+async function onLoad() {
     buildSearchList();
     buildLinkList();
+    await buildWeather();
 }
 
 function buildSearchList() {
+    let searchEngineKeys = Object.keys(searchEngines);
     let searchEngineList = "";
-    for (var i = 0; i < searchEngines.length; i++) {
-        searchEngineList += `<li><span>-${searchEngines[i][0]}</span>${searchEngines[i][1]}</li>`
+    for (var i = 0; i < searchEngineKeys.length; i++) {
+        if (i % 6 == 0) {
+            searchEngineList += '</ul><ul>'
+        }
+        searchEngineList += `<li><span>-${searchEngineKeys[i]}</span>${searchEngines[searchEngineKeys[i]][0]}</li>`
     }
     searchFlagList.innerHTML = searchEngineList;
 }
@@ -83,6 +48,21 @@ function buildLinkList() {
     linksContainer.innerHTML = linkList;
 }
 
+async function buildWeather () {
+    const url =
+        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}` +
+        `&hourly=temperature_2m&current_weather=true`;
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        let temp = `${data["current_weather"]["temperature"]}${data["current_weather_units"]["temperature"]}`;
+        let cond = `${weatherCodes[data["current_weather"]["weathercode"]]}`;
+        weatherInfo.innerHTML = `${temp} ${cond}`;
+    } catch (e) {
+        weatherInfo.innerHTML = "offline";
+    }
+}
+
 function search() {
     let value = searchBarElement.value;
     if (!value) {
@@ -92,17 +72,11 @@ function search() {
     if (value.startsWith('https://') || value.startsWith('http://')) {
         window.location = value;
     } else if (value.startsWith('-') && value[2] == ' ') {
-        let searchEngine = ""
-        for (var i = 0; i < searchEngines.length; i++) {
-            if (searchEngines[i][0] == value[1]) {
-                searchEngine = searchEngines[i][2];
-                break;
-            }
-        }
+        let searchEngine = searchEngines[value[1]];
         if (searchEngine) {
-            window.location = searchEngine + encodeURIComponent(value.substring(3, value.length));
+            window.location = searchEngine[1] + encodeURIComponent(value.substring(3, value.length));
         } else {
-            window.location = searchEngineDefault + encodeURIComponent(value);
+    window.location = searchEngineDefault + encodeURIComponent(value);
         }
     } else {
         window.location = searchEngineDefault + encodeURIComponent(value);
@@ -113,12 +87,14 @@ function searchFocus() {
     searchOptions.classList.add('input-active');
     searchHr.classList.add('input-active');
     linksContainer.classList.add('input-active');
+    weatherPanel.classList.add('input-active');
 }
 
 function searchBlur() {
     searchOptions.classList.remove('input-active');
     searchHr.classList.remove('input-active');
     linksContainer.classList.remove('input-active');
+    weatherPanel.classList.remove('input-active');
     searchBarElement.value = '';
 }
 
