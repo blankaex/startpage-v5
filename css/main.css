@@ -48,7 +48,9 @@ main {
   width: 100%;
   height: 60%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 hr {
@@ -68,7 +70,7 @@ hr {
 }
 
 .link-section {
-  color: var(--color2);
+  color: var(--color1);
   overflow-y: auto;
 }
 
@@ -108,36 +110,33 @@ hr {
 }
 
 /* IDs */
-#main-container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  width: 1000px;
+#panel {
+    border-radius: 5px 0 0 5px;
+    width: 1000px;
+    height: 350px;
+    min-height: 350px;
+    border-right: solid 2px var(--color3);
+    background: url("../img/EGWh-DFUUAA2KIz.jpg");
+    background-size: 275px;
+    background-position: left;
+    background-repeat: no-repeat;
 }
 
-#left-container {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-#left-container img {
-  width: 300px;
-}
-
-#right-container {
-  overflow: auto;
-  padding: 5px 20px 0px 20px;
+#content-wrapper {
+    right: 0;
+    width: 75%;
+    height: 100%;
+    float: right;
+    background-color: var(--background);
 }
 
 #search-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  /* grid-template-rows: 1fr 1fr; */
   grid-column-end: 5;
   grid-column-start: 1;
   text-align: center;
-  /* padding: 0 1vw 0 1vw; */
-  padding: 10px 20px 0px 20px;
+  padding: 20px 20px 0px 20px;
   transition: 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s; 
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
@@ -199,12 +198,7 @@ hr {
   transition-delay: 0s;
   display: flex;
   justify-content: center;
-}
-
-#search-options ul {
-  display: inline-block;
-  width: max-content;
-  text-align: left;
+  padding-top: 10px;
 }
 
 #search-options.input-active {
@@ -216,7 +210,10 @@ hr {
 }
 
 #search-options ul {
-  padding: 0px;
+  display: inline-block;
+  width: max-content;
+  text-align: left;
+  padding: 0px 20px 0px 20px;
 }
 
 #search-options li {
@@ -228,7 +225,7 @@ hr {
 }
 
 #search-options span {
-  color: var(--color10);
+  color: var(--color1);
   padding: 10px;
   margin-right: 10px;
   width: 100px;
@@ -242,7 +239,7 @@ hr {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   justify-content: center;
-  padding: 40px 10px 0px 10px;
+  padding: 30px 10px 0px 10px;
   row-gap: 5vh;
   max-height: 999px;
   opacity: 1;
