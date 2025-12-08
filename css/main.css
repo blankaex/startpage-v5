@@ -240,7 +240,7 @@ hr {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     justify-content: center;
-    padding: 30px 10px 0px 10px;
+    padding: 30px 20px 0px 20px;
     row-gap: 5vh;
     max-height: 999px;
     opacity: 1;
