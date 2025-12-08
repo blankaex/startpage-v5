@@ -11,7 +11,7 @@ const searchEngines = {
 };
 
 const links = [
-    ["CATEGORY", "social"],
+    ["CATEGORY", "category1"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
@@ -19,7 +19,7 @@ const links = [
     ["example", "https://example-link.com/"],
     ["CATEGORY", "END"],
 
-    ["CATEGORY", "media"],
+    ["CATEGORY", "category2"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
@@ -27,7 +27,7 @@ const links = [
     ["example", "https://example-link.com/"],
     ["CATEGORY", "END"],
 
-    ["CATEGORY", "server"],
+    ["CATEGORY", "category3"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
@@ -35,7 +35,7 @@ const links = [
     ["example", "https://example-link.com/"],
     ["CATEGORY", "END"],
 
-    ["CATEGORY", "misc"],
+    ["CATEGORY", "category4"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
     ["example", "https://example-link.com/"],
